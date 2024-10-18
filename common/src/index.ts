@@ -28,4 +28,4 @@ export const updateBlogInput = z.object({
   id: z.string()
 });
 
-export type UreateBlogInput = z.infer<typeof updateBlogInput>;
+export type UpdateBlogInput = z.infer<typeof updateBlogInput>;

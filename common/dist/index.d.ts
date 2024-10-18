@@ -48,4 +48,4 @@ export declare const updateBlogInput: z.ZodObject<{
     content: string;
     id: string;
 }>;
-export type UreateBlogInput = z.infer<typeof updateBlogInput>;
+export type UpdateBlogInput = z.infer<typeof updateBlogInput>;

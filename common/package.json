@@ -1,7 +1,8 @@
 {
-  "name": "@abhilashtengli/medium-common",
+  "name": "@abhilashtengli/medium-common01",
   "version": "1.0.0",
   "main": "dist/index.js",
+  "private": false,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +11,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@abhilashtengli/medium-common": "file:",
+    "@abhilashtengli/medium-common01": "file:",
     "common": "file:",
     "zod": "^3.23.8"
   }

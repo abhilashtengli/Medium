@@ -2,8 +2,9 @@ import { Context, Hono } from "hono";
 import { PrismaClient } from "@prisma/client/edge";
 import { withAccelerate } from "@prisma/extension-accelerate";
 import { sign, verify, decode } from "hono/jwt";
-import { getCookie, setCookie } from "hono/cookie";
-import { signinInput, signupInput } from "../../../common/src/index"; // as of now @abhilashtengli/medium-coomon is not working
+import { setCookie } from "hono/cookie";
+import { signupInput, signinInput } from "@abhilashtengli/medium-common01";
+
 export const userRouter = new Hono<{
   Bindings: {
     DATABASE_URL: string;
