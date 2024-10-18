@@ -3,8 +3,7 @@ import { PrismaClient } from "@prisma/client/edge";
 import { withAccelerate } from "@prisma/extension-accelerate";
 import { sign, verify, decode } from "hono/jwt";
 import { getCookie, setCookie } from "hono/cookie";
-import { singinInput, singupInput } from "../zod";
-
+import { signinInput, signupInput } from "../../../common/src/index"; // as of now @abhilashtengli/medium-coomon is not working
 export const userRouter = new Hono<{
   Bindings: {
     DATABASE_URL: string;
@@ -14,7 +13,7 @@ export const userRouter = new Hono<{
 
 userRouter.post("/signup", async (c: Context) => {
   const body = await c.req.json();
-  const { success } = singupInput.safeParse(body);
+  const { success } = signupInput.safeParse(body);
 
   if (!success) {
     c.status(411);
@@ -69,7 +68,7 @@ userRouter.post("/signup", async (c: Context) => {
 
 userRouter.post("/signin", async (c: Context) => {
   const body = await c.req.json();
-  const { success } = singinInput.safeParse(body);
+  const { success } = signinInput.safeParse(body);
   if (!success) {
     c.status(411);
     return c.json({ message: "Inputs are not valid" });
