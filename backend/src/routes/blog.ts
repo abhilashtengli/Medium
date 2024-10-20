@@ -34,7 +34,7 @@ blogRouter.use("/*", async (c, next) => {
   }
 });
 
-blogRouter.post("/", async c => {
+blogRouter.post("/add", async c => {
   const body = await c.req.json();
   const userId = c.get("userId");
   const prisma = new PrismaClient({

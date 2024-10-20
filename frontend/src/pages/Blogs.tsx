@@ -1,3 +1,4 @@
+import { BlogSkeleton } from "../Components/BlogsSkeleton";
 import useBlogs from "../Components/hooks/useBlogs";
 import NavBar from "../Components/NavBar";
 import BlogCard from "./BlogCard";
@@ -6,7 +7,23 @@ const Blogs = () => {
   const { loading, blogs } = useBlogs();
 
   if (loading) {
-    return <div>loading.....</div>;
+    return (
+      <div>
+        <NavBar />
+        <div className="flex justify-center w-full ">
+          <div>
+            <BlogSkeleton />
+            <BlogSkeleton />
+            <BlogSkeleton />
+            <BlogSkeleton />
+            <BlogSkeleton />
+            <BlogSkeleton />
+            <BlogSkeleton />
+            <BlogSkeleton />
+          </div>
+        </div>
+      </div>
+    );
   }
   if (!blogs || blogs.length === 0) {
     return <div>No blogs available.</div>; // Handle empty blog list case
